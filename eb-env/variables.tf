@@ -24,14 +24,12 @@ variable "service_description" {
 }
 variable "env" {
   type    = string
-  default = "dev"
   description = "The environment (dev, stage, prod)"
 }
 
 # Instance
 variable "eb_solution_stack_name" {
   type    = string
-  default = "64bit Amazon Linux 2018.03 v4.8.1 running Node.js"
   description = "The Elastic Beanstalk solution stack name"
 }
 variable "instance_type" {
@@ -63,7 +61,6 @@ variable "instance_volume_iops" {
 }
 variable "ssh_key_name" {
   type    = string
-  default = "Ireland_VPC" #### ver
   description = "The EC2 SSH KeyPair Name"
 }
 variable "public_ip" {
@@ -219,7 +216,6 @@ variable "node_cmd" {
 }
 variable "node_version" {
   type    = string
-  default = "14"
   description = "Version of Node.js."
 }
 variable "proxy_server" {
@@ -248,7 +244,6 @@ variable "elb_subnets" {
 }
 variable "security_groups" {
   type    = string
-  default = "elasticbeanstalk-default"
   description = "Lists the Amazon EC2 security groups to assign to the EC2 instances in the Auto Scaling group in order to define firewall rules for the instances."
 }
 
