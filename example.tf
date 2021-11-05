@@ -31,7 +31,8 @@ resource "aws_elastic_beanstalk_application" "eb_app" {
 }
 
 module "app" {
-  source     = "github.com/BasileTrujillo/terraform-elastic-beanstalk-nodejs//eb-env"
+  #source     = "github.com/BasileTrujillo/terraform-elastic-beanstalk-nodejs//eb-env"
+  source     = "github.com/bocha1986/eb_test/tree/main/eb-env"
   aws_region = "${var.aws_region}"
 
   # Application settings
@@ -42,7 +43,7 @@ module "app" {
   # Instance settings
   instance_type  = "t2.micro"
   min_instance   = "1"
-  max_instance   = "1"
+  max_instance   = "2"
 
   # ELB
   enable_https           = "false"
@@ -59,7 +60,8 @@ module "app" {
 ## Route53 config
 ##################################################
 module "app_dns" {
-  source      = "github.com/BasileTrujillo/terraform-elastic-beanstalk-nodejs//r53-alias"
+  #source      = "github.com/BasileTrujillo/terraform-elastic-beanstalk-nodejs//r53-alias"
+  source      = "github.com/bocha1986/eb_test/tree/main//r53-alias"
   aws_region  = "${var.aws_region}"
 
   domain      = "example.io"
