@@ -81,6 +81,12 @@ resource "aws_iam_policy_attachment" "beanstalk_ec2_web" {
 ##################################################
 ## Elastic Beanstalk
 ##################################################
+
+/* resource "aws_elastic_beanstalk_application" "eb_app" {
+  name        = "${var.service_name}-app"
+  description = "tf-test-desc"
+} */
+
 resource "aws_elastic_beanstalk_environment" "eb_env" {
   name                = "${var.service_name}-${var.env}"
   application         = "${var.service_name}"

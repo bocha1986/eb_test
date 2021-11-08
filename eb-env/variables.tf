@@ -13,6 +13,7 @@ description = "The AWS Region"
 #}
 
 # Application
+
 variable "service_name" {
   type    = string
   description = "The application name"
@@ -65,6 +66,7 @@ variable "ssh_key_name" {
 }
 variable "public_ip" {
   type = string
+  default = "false"
   description = "EC2 instances must have a public ip (true | false)"
 }
 variable "min_instance" {
@@ -151,7 +153,7 @@ variable "enable_http" {
 }
 variable "enable_https" {
   type = string
-  default = "true"
+  default = "false"
   description = "Enable or disable HTTPS connection on port 443."
 }
 variable "elb_connection_timeout" {
@@ -216,11 +218,12 @@ variable "node_cmd" {
 }
 variable "node_version" {
   type    = string
+  default = ""
   description = "Version of Node.js."
 }
 variable "proxy_server" {
   type    = string
-  default = "none"
+  default = "nginx"
   description = "Specifies which web server should be used to proxy connections to Node.js."
 }
 
